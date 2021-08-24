@@ -1,5 +1,22 @@
+:root {
+  $morro: #aacbe6;
+  $cayucos: #9cd0ff;
+  $bahamas: #3cc0fe;
+  $capetown: #27a5fd;
+  $cabo: #0066ff;
+  $reynisfjara: #34373e;
+  $svalbard: #d2e9fa;
+}
+
+body {
+  background-color: #f3f6fa;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
 }
 
 .App-logo {

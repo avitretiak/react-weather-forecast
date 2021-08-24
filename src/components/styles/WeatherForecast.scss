@@ -1,0 +1,13 @@
+@import './constants.scss';
+
+
+.WeatherForecast {
+    background: linear-gradient(to bottom right, $white 80%, $gradientGrey);
+    width: 900px;
+    height: $widgetHeight;
+    border-radius: 6px;
+    box-shadow: 20px 30px 50px 0px $blueShadow;
+    position: relative;
+    overflow: hidden;
+    padding: 4vh 3vw;
+}

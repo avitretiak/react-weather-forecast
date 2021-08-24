@@ -1,0 +1,49 @@
+@import './constants.scss';
+
+
+.locationInput {
+    transition: all 0.20s ease-in-out;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 10%;
+    border:2px solid $borderGrey;
+    border-radius: 5px;
+}
+
+
+.locationInputField {
+    font-weight: 600;
+    width: 75%;
+    border: none;
+}
+
+.locationInputPlaceholder {
+    color: $lightText;
+}
+
+
+.locationInputField:hover {
+    width: 75%;
+    border: none;
+}
+
+.input-group:focus-within {
+    box-shadow: 0 0 2px 2px $blueShadow;
+    border: 2px solid $blue; 
+}
+
+.input-group.input-group-seamless-append {
+    border: none;
+    > input {
+        width: 100%;
+        padding-right: 52px;
+    }
+    > .input-group-append {
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        bottom: 1px;
+        z-index: 4;
+    }
+}

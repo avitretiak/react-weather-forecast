@@ -3,13 +3,17 @@
 .ant-btn-circle,
 .ant-btn-lg,
 .-ant-btn-icon-only {
+  border-radius: 6px;
   border-width: 0;
   box-shadow: none;
+  box-shadow: 0;
+  float: right;
   height: 40px !important;
   margin-left: 15px;
   padding: 0 !important;
+  position: absolute;
   vertical-align: middle;
-  width: 40px !important;
+  width: 5% !important;
 
   svg {
     color: rgba(23, 135, 240, 0.65) !important;

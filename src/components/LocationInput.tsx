@@ -1,7 +1,6 @@
 import React from 'react';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import './styles/LocationInput.scss';
-import { Input } from 'antd';
 import LocationButton from './LocationButton';
 
 const LocationInput = () => {
@@ -20,7 +19,7 @@ const LocationInput = () => {
   };
 
   return (
-    <Input.Group>
+    <div className="location-container">
       <GooglePlacesAutocomplete
         apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
         debounce={1500}
@@ -36,7 +35,7 @@ const LocationInput = () => {
         }}
       />
       <LocationButton />
-    </Input.Group>
+    </div>
   );
 };
 

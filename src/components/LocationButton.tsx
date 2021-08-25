@@ -5,7 +5,7 @@ import { AimOutlined } from '@ant-design/icons';
 
 const LocationButton = () => (
   <Button
-    size="large"
+    size="middle"
     className="location-btn"
     shape="circle"
     icon={<AimOutlined />}

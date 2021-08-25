@@ -1,11 +1,11 @@
-import React from "react";
-import LocationInput from "./LocationInput";
-import './styles/LeftPane.scss'
+import React from 'react';
+import LocationInput from './LocationInput';
+import './styles/LeftPane.scss';
 
 const LeftPane = () => (
-    <div className="LeftPane">
-        <LocationInput />
-    </div>
+  <div className="left-pane-container">
+    <LocationInput />
+  </div>
 );
 
-export default LeftPane
+export default LeftPane;

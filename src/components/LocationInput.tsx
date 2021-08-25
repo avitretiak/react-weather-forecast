@@ -1,48 +1,43 @@
-import React, {useState} from 'react';
+import React from 'react';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
-import GeoLocateButton from './GeoLocateButton';
-import './styles/LocationInput.scss'
+import './styles/LocationInput.scss';
+import { Input } from 'antd';
+import LocationButton from './LocationButton';
 
 const LocationInput = () => {
-  const [location, setLocation] = useState();
-  
-  const styles = {
-    container: (css: any) => ({ ...css, flex: "1 1 auto", alignSelf: "stretch"}),
-    control: (css: any) => ({ ...css, 
-      border: '0 !important',
-      boxShadow: '0 !important',
-      '&:hover': {
-        border: '0 !important',
-        cursor: 'text'
-      },
-    })
+  // const [value, setValue] = useState('');
+  // const [location, setLocation] = useState('');
+
+  const selectProps = {
+    placeholder: 'Location',
+    noOptionsMessage: () => 'No Results Found',
+  };
+  const style = {
+    input: (provided: any) => ({
+      ...provided,
+      width: '75%',
+    }),
   };
 
-
-  const selectCustomProps = {
-    className: 'locationInputField form-control',
-    placeholder: <div className="locationInputPlaceholder">Location</div>,
-    components: {
-      DropdownIndicator: () => null,
-      IndicatorSeparator: () => null,
-    },
-    location,
-    onChange: setLocation,
-  }
-  
   return (
-    <div className="locationInput input-group">
-      <GooglePlacesAutocomplete 
-        selectProps={{...selectCustomProps, styles: styles}}
-        debounce={1000}
+    <Input.Group>
+      <GooglePlacesAutocomplete
         apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
+        debounce={1500}
+        selectProps={{
+          ...selectProps,
+          components: {
+            IndicatorSeparator: () => null,
+            DropdownIndicator: () => null,
+          },
+          styles: { style },
+          className: 'location-select-input',
+          classNamePrefix: 'location-select-input',
+        }}
       />
-      <div className="input-group-seamless-append">
-        <GeoLocateButton />
-      </div>
-      
-    </div>
+      <LocationButton />
+    </Input.Group>
   );
-}
+};
 
 export default LocationInput;

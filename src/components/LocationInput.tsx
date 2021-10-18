@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import GooglePlacesAutocomplete, {
   geocodeByPlaceId,
   getLatLng,
@@ -6,12 +6,11 @@ import GooglePlacesAutocomplete, {
 import './styles/LocationInput.scss';
 import LocationButton from './LocationButton';
 
-const LocationInput = () => {
-  const [location, setLocation] = useState({});
-  const [value, setValue] = useState();
+const LocationInput = (props: any) => {
+  const { setLocation } = props;
+  const [value] = useState();
 
   const handleLocation = async (event: any) => {
-    setValue(event.value.place_id);
     await geocodeByPlaceId(event.value.place_id)
       .then((results) => getLatLng(results[0]))
       .then(({ lat, lng }) => setLocation({ lat, lng }));

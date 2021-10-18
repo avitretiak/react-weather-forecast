@@ -8,12 +8,18 @@ import LocationButton from './LocationButton';
 
 const LocationInput = (props: any) => {
   const { setLocation } = props;
-  const [value] = useState();
+  const [value, setValue] = useState('Location');
 
   const handleLocation = async (event: any) => {
+    console.log(event);
     await geocodeByPlaceId(event.value.place_id)
       .then((results) => getLatLng(results[0]))
       .then(({ lat, lng }) => setLocation({ lat, lng }));
+
+    const text = event.value.terms[1]
+      ? `${event.value.terms[0].value}, ${event.value.terms[1].value}`
+      : `${event.value.terms[0].value}`;
+    setValue(text);
   };
 
   const style = {
@@ -23,7 +29,7 @@ const LocationInput = (props: any) => {
     }),
   };
   const selectProps = {
-    placeholder: 'Location',
+    placeholder: value,
     noOptionsMessage: () => 'No Results Found',
     components: {
       IndicatorSeparator: () => null,
@@ -32,7 +38,9 @@ const LocationInput = (props: any) => {
     styles: { style },
     className: 'location-select-input',
     classNamePrefix: 'location-select-input',
+    label: value,
     value,
+    onSelect: handleLocation,
     onChange: handleLocation,
   };
 
@@ -45,7 +53,7 @@ const LocationInput = (props: any) => {
           ...selectProps,
         }}
       />
-      <LocationButton />
+      <LocationButton setValue={setValue} setLocation={setLocation} />
     </div>
   );
 };

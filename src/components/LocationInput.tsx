@@ -1,21 +1,40 @@
-import React from 'react';
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+import React, { useEffect, useState } from 'react';
+import GooglePlacesAutocomplete, {
+  geocodeByPlaceId,
+  getLatLng,
+} from 'react-google-places-autocomplete';
 import './styles/LocationInput.scss';
 import LocationButton from './LocationButton';
 
 const LocationInput = () => {
-  // const [value, setValue] = useState('');
-  // const [location, setLocation] = useState('');
+  const [location, setLocation] = useState({});
+  const [value, setValue] = useState();
 
-  const selectProps = {
-    placeholder: 'Location',
-    noOptionsMessage: () => 'No Results Found',
+  const handleLocation = async (event: any) => {
+    setValue(event.value.place_id);
+    await geocodeByPlaceId(event.value.place_id)
+      .then((results) => getLatLng(results[0]))
+      .then(({ lat, lng }) => setLocation({ lat, lng }));
   };
+
   const style = {
     input: (provided: any) => ({
       ...provided,
       width: '75%',
     }),
+  };
+  const selectProps = {
+    placeholder: 'Location',
+    noOptionsMessage: () => 'No Results Found',
+    components: {
+      IndicatorSeparator: () => null,
+      DropdownIndicator: () => null,
+    },
+    styles: { style },
+    className: 'location-select-input',
+    classNamePrefix: 'location-select-input',
+    value,
+    onChange: handleLocation,
   };
 
   return (
@@ -25,13 +44,6 @@ const LocationInput = () => {
         debounce={1500}
         selectProps={{
           ...selectProps,
-          components: {
-            IndicatorSeparator: () => null,
-            DropdownIndicator: () => null,
-          },
-          styles: { style },
-          className: 'location-select-input',
-          classNamePrefix: 'location-select-input',
         }}
       />
       <LocationButton />

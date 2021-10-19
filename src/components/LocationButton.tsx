@@ -13,7 +13,7 @@ const LocationButton = (props: any) => {
     const locationResult = await geocodeByLatLng(
       { lat, lng },
     )
-      .then((results) => results.filter((result) => result.types[0] === 'neighborhood'))
+      .then((results) => results.filter((result) => result.types[0] === 'postal_code'))
       .then((filteredResults) => filteredResults[0].formatted_address.split(', '))
       .then((splitName) => `${splitName[0]}, ${splitName[1]}`);
     setLocation({ lat, lng });

@@ -1,7 +1,7 @@
 @import './constants';
 
 .location-container {
-  width: 100%;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .location-select-input {

@@ -1,5 +1,10 @@
 .right-pane-container {
-    display:inline-block;
-    width: 60%;
-  }
-  
+  grid-area: 1 / 2 / 4 / 4;
+  margin: 0 20px;
+}
+.weather-chart-container {
+  grid-area: 1 / 2 / 3 / 4;
+}
+.small-cards-container {
+  grid-area: 3 / 2 / 4 / 4;
+}

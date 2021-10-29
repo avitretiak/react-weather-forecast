@@ -16,7 +16,7 @@ const chartStyle = {
 };
 
 const WeatherChart = (props: any) => {
-  const { temperatures } = props;
+  const { temperatures, selectedDay } = props;
   const chartRef = useRef<any>(null);
 
   const tooltipPlugin = Chart.registry.getPlugin('tooltip') as any;
@@ -96,14 +96,14 @@ const WeatherChart = (props: any) => {
     }
   };
   useEffect(() => {
-    highlightElement(0);
-  }, [temperatures]);
+    highlightElement(selectedDay);
+  }, [selectedDay, temperatures]);
 
   return (
-    <>
-      <p className="temperature-chart-title">Temperature</p>
+    <div className="weather-chart-container">
+      <p className="temperature-chart-title">Temperature Forecast</p>
       <Line data={data} ref={chartRef} options={options} height="120px" />
-    </>
+    </div>
   );
 };
 

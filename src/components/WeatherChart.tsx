@@ -101,7 +101,7 @@ const WeatherChart = (props: any) => {
 
   return (
     <div className="weather-chart-container">
-      <p className="temperature-chart-title">Temperature Forecast</p>
+      <p className="temperature-chart-title">Average Temperature</p>
       <Line data={data} ref={chartRef} options={options} height="120px" />
     </div>
   );

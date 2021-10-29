@@ -1,0 +1,43 @@
+.weather-card-big {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px 9px;
+    grid-template-areas:
+      ". DateTime DateTime ."
+      "Icon Icon Temperature Temperature"
+      "Icon Icon Temperature Temperature"
+      ". Weather Weather ."
+      "Humidity Humidity Windspeed Windspeed";
+    grid-area: 2 / 1 / 4 / 2;
+  }
+  .weather-card-big * {
+    justify-self: center;
+    align-self: center;
+    padding-top: 10%;
+  }
+  .wi-main::before {
+    font-size: 80px;
+  }
+  .date-time-container {
+    grid-area: DateTime;
+    white-space: nowrap;
+  }
+  .wi-main {
+    grid-area: Icon;
+  }
+  .temp-display {
+    grid-area: Temperature;
+    font-size: 30px;
+  }
+  .current-weather-display {
+    grid-area: Weather;
+  }
+  .humidity-container {
+    grid-area: Humidity;
+  }
+  .windspeed-container {
+    grid-area: Windspeed;
+  }
+  

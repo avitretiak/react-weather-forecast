@@ -2,9 +2,11 @@
 
 .weather-forecast-container {
   display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
-  gap: 0px 0px;
+  grid-template-columns: 0.8fr 1.2fr; 
+  grid-template-rows: 0.5fr 1.5fr 1fr; 
+  gap: 10px 10px; 
+  justify-content: center; 
+  align-content: center; 
   background: white;
   border-radius: 6px;
   box-shadow: 20px 20px 20px 0 $blueShadow;

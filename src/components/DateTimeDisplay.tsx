@@ -18,7 +18,7 @@ const DateTimeDisplay = (props: any) => {
   const dateTimeText = `${dateTime.utcOffset(secondsOffset / 60).format('hh:mm a, dddd, MMM DD, YYYY')}`;
 
   return (
-    <span>
+    <span className="date-time-text date-time-container">
       {dateTimeText}
     </span>
   );

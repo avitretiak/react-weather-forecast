@@ -2,13 +2,11 @@ import React from 'react';
 import './styles/WeatherIcons.scss';
 
 const WeatherIcon = (props: any) => {
-  const { iconId } = props;
-  const weatherClass = `owi owi-${iconId}`;
+  const { iconId, iconClass } = props;
+  const weatherClass = `owi owi-${iconId} ${iconClass}`;
 
   return (
-    <>
-      <span className={weatherClass} />
-    </>
+    <i className={weatherClass} />
   );
 };
 

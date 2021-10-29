@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import LeftPane from './LeftPane';
+import RightPane from './RightPane';
 import './styles/WeatherForecast.scss';
 
 const WeatherForecast = () => {
   const [location, setLocation] = useState({ lat: 0.00, lng: 0.00 });
   const [apiData, setApiData] = useState<any>();
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat.toPrecision(4)}&lon=${location.lng.toPrecision(4)}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat.toPrecision(4)}&lon=${location.lng.toPrecision(4)}&exclude=minutely,hourly,alerts&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
   const loadWeather = async () => {
     if (location.lat || location.lng) {
       await fetch(apiUrl).then((response) => {
@@ -26,7 +27,12 @@ const WeatherForecast = () => {
 
   return (
     <div className="weather-forecast-container">
-      <LeftPane apiData={apiData} location={location} setLocation={setLocation} />
+      <LeftPane
+        currentWeather={apiData?.current}
+        timezoneOffset={apiData?.timezone_offset}
+        location={location}
+        setLocation={setLocation}
+      />
     </div>
   );
 };

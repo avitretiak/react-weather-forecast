@@ -13,7 +13,7 @@ const DateTimeDisplay = (props: any) => {
       setDateTime(dayjs.utc());
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [secondsOffset]);
 
   const dateTimeText = `${dateTime.utcOffset(secondsOffset / 60).format('hh:mm a, dddd, MMM DD, YYYY')}`;
 

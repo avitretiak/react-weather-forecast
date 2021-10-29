@@ -1,21 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400;600');
+@import 'colors.module.scss';
 @import '~antd/dist/antd.css';
 
 :root {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
-
-$white: #fff;
-$borderGrey: #e0e0e0;
-$gradientGrey: #e2e2e2;
-$backgroundGrey: #f3f6fa;
-$lightText: #b9b9b9;
-$blue: #addeff;
-
-$whiteAlpha: rgba($white, 0.7);
-$greyAlpha: rgba($gradientGrey, 0.6);
-
-$blueShadow: rgba($blue, 0.5);
 
 $widgetHeight: 400px;

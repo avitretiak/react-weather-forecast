@@ -1,3 +1,4 @@
+@import 'colors.module.scss';
 .location-btn,
 .ant-btn,
 .ant-btn-circle,
@@ -16,6 +17,6 @@
   width: 5% !important;
 
   svg {
-    color: rgba(23, 135, 240, 0.65) !important;
+    color: $strongBlue !important;
   }
 }

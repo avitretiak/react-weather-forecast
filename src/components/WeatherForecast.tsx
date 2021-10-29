@@ -33,6 +33,9 @@ const WeatherForecast = () => {
         location={location}
         setLocation={setLocation}
       />
+      <RightPane
+        dailyWeather={apiData?.daily}
+      />
     </div>
   );
 };

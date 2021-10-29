@@ -82,7 +82,7 @@ const WeatherChart = (props: any) => {
         callbacks: {
           title: () => '',
           label(context: any) {
-            return `${context.dataset.data[context.dataIndex].toFixed(1)} ˚ᶜ`;
+            return `${temperatures[context.dataIndex].toFixed(1)} ˚ᶜ`;
           },
         },
       },
@@ -93,6 +93,7 @@ const WeatherChart = (props: any) => {
     if (chartRef && chartRef.current && temperatures) {
       chartRef.current.setActiveElements([{ datasetIndex: 0, index: elementNumber }]);
       chartRef.current.tooltip.setActiveElements([{ datasetIndex: 0, index: elementNumber }]);
+      chartRef.current.tooltip.update();
     }
   };
   useEffect(() => {

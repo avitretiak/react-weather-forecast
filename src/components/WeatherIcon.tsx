@@ -1,9 +1,8 @@
 import React from 'react';
-import './styles/WeatherIcons.scss';
+import './styles/_icons.scss';
 
-const WeatherIcon = (props: any) => {
-  const { iconId, iconClass } = props;
-  const weatherClass = `owi owi-${iconId} ${iconClass}`;
+const WeatherIcon = ({ iconId, iconClass }: any) => {
+  const weatherClass = `block owi owi-${iconId} ${iconClass}`;
 
   return (
     <i className={weatherClass} />

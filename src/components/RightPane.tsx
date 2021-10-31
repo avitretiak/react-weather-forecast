@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import WeatherChart from './WeatherChart';
-import './styles/RightPane.scss';
 import WeatherCardSmall from './WeatherCardSmall';
 
-const RightPane = (props: any) => {
-  const { dailyWeather } = props;
+const RightPane = ({ dailyWeather }: any) => {
   const [selectedDay, setSelectedDay] = useState(0);
   const nextFourDays = dailyWeather?.slice(0, 4);
   const temperatures = nextFourDays?.map((day: any) => day.temp.day - 273.15);
@@ -21,6 +19,7 @@ const RightPane = (props: any) => {
             <WeatherCardSmall
               forecast={forecast}
               dayOffset={i}
+              selectedDay={selectedDay}
               handleClick={handleCardClick}
             />
           ),

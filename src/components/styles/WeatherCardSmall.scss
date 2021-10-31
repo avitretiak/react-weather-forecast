@@ -1,12 +1,40 @@
+@import './_constants.scss';
+
 .weather-card-small {
-  display: inline-block;
-  height: 100%;
-  width: 25%;
+    height: 100%;
+    background-color: transparent;
+    border: 0;
+    border-radius: $borderRadius;
 }
 
-.weather-card-small span {
-    display: block;
+.weather-card-small > *{
+    font-size: small;
+    line-height: 30px;
+    color: $textGrey;
+    font-weight: normal;
+
 }
-.weather-card-small i{
-    display: block;
+
+.weather-card-small {
+    .humidity-container {
+        line-height: 25px;
+        padding: 5px 0px;
+    }
+}
+.weather-card-small-day {
+    font-weight: bold;
+    font-size: small;
+} 
+
+.weather-card-small > i { 
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.weather-card-small.selected > * {
+    color: white !important;
+}
+
+.weather-card-small.selected{
+    background-color: $fillBlue;
 }

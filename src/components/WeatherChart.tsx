@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Line, Chart } from 'react-chartjs-2';
-import colors from './styles/colors.module.scss';
+import colors from './styles/_colors.module.scss';
+import './styles/WeatherChart.scss';
 
 const chartStyle = {
   borderCapStyle: 'round',
@@ -15,8 +16,7 @@ const chartStyle = {
   hoverBackgroundColor: colors.strongBlue,
 };
 
-const WeatherChart = (props: any) => {
-  const { temperatures, selectedDay } = props;
+const WeatherChart = ({ temperatures, selectedDay }: any) => {
   const chartRef = useRef<any>(null);
 
   const tooltipPlugin = Chart.registry.getPlugin('tooltip') as any;
@@ -82,7 +82,7 @@ const WeatherChart = (props: any) => {
         callbacks: {
           title: () => '',
           label(context: any) {
-            return `${temperatures[context.dataIndex].toFixed(1)} ˚ᶜ`;
+            return `${temperatures[context.dataIndex].toFixed(1)}˚c`;
           },
         },
       },
@@ -102,8 +102,15 @@ const WeatherChart = (props: any) => {
 
   return (
     <div className="weather-chart-container">
-      <p className="temperature-chart-title">Average Temperature</p>
-      <Line data={data} ref={chartRef} options={options} height="120px" />
+      {temperatures
+        ? (
+          <div className="weather-chart-container">
+            <p className="temperature-chart-title">Daily Average</p>
+            <Line data={data} ref={chartRef} options={options} height="150px" className="weather-chart" />
+          </div>
+        )
+        : null}
+
     </div>
   );
 };

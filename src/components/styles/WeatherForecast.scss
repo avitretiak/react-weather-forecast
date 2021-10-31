@@ -1,18 +1,11 @@
 @import './constants';
+@import './layout';
 
-.weather-forecast-container {
-  display: grid; 
-  grid-template-columns: 0.7fr 1.2fr; 
-  grid-template-rows: 0.5fr 1.5fr 1fr; 
-  gap: 10px 10px; 
-  justify-content: center; 
-  align-content: center; 
+.container {
   background: white;
   border-radius: 6px;
   box-shadow: 20px 20px 20px 0 $blueShadow;
-  height: $widgetHeight;
   overflow: hidden;
   padding: 3vh 2vw;
   position: relative;
-  width: 900px;
 }

@@ -1,47 +1,35 @@
-.weather-card-big {
-  justify-content: left;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.4fr 2.1fr 0.3fr 1.2fr;
-  gap: 8px 9px;
-  grid-template-areas:
-    "DateTime DateTime"
-    "Icon Temperature"
-    "Weather Weather"
-    "Humidity Windspeed";
-  grid-area: 2 / 1 / 4 / 2;
-}
-.weather-card-big * {
-  justify-self: center;
-  align-self: center;
-  padding-top: 5%;
-}
-.wi-main::before {
-  font-size: 80px;
-  justify-content: end;
-}
-.date-time-container {
-  grid-area: DateTime;
-  white-space: nowrap;
-}
+@import "./_icons.scss";
+@import "./_constants.scss";
+
+
 .wi-main {
-  grid-area: Icon;
+  font-size: 90px;
 }
 .temp-display {
-  grid-area: Temperature;
-  font-size: 30px;
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wi-main, .temp-display {
+    text-align: center;
+}
+.weather-card-big-current-text {
   font-weight: bold;
-  justify-content: start;
+  font-size: x-large;
+  line-height: 0px;
+  margin-top: -20px;
 }
-.current-weather-display {
-  grid-area: Weather;
-  font-size: 20px;
+.weather-card-big {
+    .date-time-text,
+    .humidity-text,
+    .windspeed-text {
+      color: $textGrey;
+      font-size: 1em;
+    }
+}
+.windspeed-value,
+.humidity-percentage {
   font-weight: bold;
-  align-self: start;
-}
-.humidity-container {
-  grid-area: Humidity;
-}
-.windspeed-container {
-  grid-area: Windspeed;
+  font-size: 1.2em;
 }

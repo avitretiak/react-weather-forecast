@@ -1,10 +1,5 @@
 @import './constants';
 
-.location-select-input {
-  display: inline-block;
-  width: 80%;
-}
-
 .location-select-input__option--is-selected {
   background-color: rgba(24, 143, 255, 0.25) !important;
   color: rgba(0, 0, 0, 0.7) !important;
@@ -13,8 +8,8 @@
 .location-select-input__control {
   border: 0 !important;
   border-color: #40a9ff;
-  border-radius: 10px !important;
-  box-shadow: 0 0 7px 4px rgba(24, 143, 255, 0.1);
+  border-radius: $borderRadius;
+  box-shadow: 0 0 4px 1px $borderGrey;
   font-size: 14px;
   padding: 3px 11px;
   touch-action: manipulation;
@@ -61,4 +56,26 @@
   font-weight: 400;
   white-space: nowrap;
   width: 75%;
+}
+
+.location-btn,
+.ant-btn,
+.ant-btn-circle,
+.ant-btn-lg,
+.-ant-btn-icon-only {
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: none;
+  box-shadow: 0;
+  float: right;
+  height: 40px !important;
+  margin-left: 15px;
+  padding: 0 !important;
+  position: absolute;
+  vertical-align: middle;
+  width: 5% !important;
+
+  svg {
+    color: $strongBlue !important;
+  }
 }

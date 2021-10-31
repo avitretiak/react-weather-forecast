@@ -26,7 +26,7 @@ const WeatherForecast = () => {
   }, [apiUrl]);
 
   return (
-    <div className="weather-forecast-container">
+    <div className="container">
       <LeftPane
         currentWeather={apiData?.current}
         timezoneOffset={apiData?.timezone_offset}

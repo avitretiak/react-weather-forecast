@@ -1,0 +1,18 @@
+@import "./_constants.scss";
+
+.temperature-chart-title {
+    text-align: center;
+    font-size: 1.2em;
+    color: $textGrey;
+    font-weight: bold;
+}
+
+.weather-chart-container {
+    overflow: hidden;
+    margin: 0px 0px;
+}
+
+.weather-chart {
+    overflow:hidden;
+    border-radius: 0% 0% 10% 10%;
+}

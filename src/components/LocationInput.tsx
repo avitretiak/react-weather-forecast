@@ -6,8 +6,7 @@ import GooglePlacesAutocomplete, {
 import './styles/LocationInput.scss';
 import LocationButton from './LocationButton';
 
-const LocationInput = (props: any) => {
-  const { setLocation } = props;
+const LocationInput = ({ setLocation }: any) => {
   const [value, setValue] = useState('Location');
 
   const handleLocation = async (event: any) => {
@@ -45,7 +44,7 @@ const LocationInput = (props: any) => {
   };
 
   return (
-    <div className="location-container">
+    <div className="location-input-container">
       <GooglePlacesAutocomplete
         apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
         debounce={1500}

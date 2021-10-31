@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
-import './styles/LeftPane.scss';
 
-const DateTimeDisplay = (props: any) => {
-  const { secondsOffset } = props;
+const DateTimeDisplay = ({ secondsOffset }:any) => {
   dayjs.extend(utc);
   const [dateTime, setDateTime] = useState(dayjs.utc());
 
@@ -18,7 +16,7 @@ const DateTimeDisplay = (props: any) => {
   const dateTimeText = `${dateTime.utcOffset(secondsOffset / 60).format('hh:mm a, dddd, MMM DD, YYYY')}`;
 
   return (
-    <span className="date-time-text date-time-container">
+    <span className="date-time-text">
       {dateTimeText}
     </span>
   );

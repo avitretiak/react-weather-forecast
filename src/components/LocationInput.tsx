@@ -10,7 +10,6 @@ const LocationInput = ({ setLocation }: any) => {
   const [value, setValue] = useState('Location');
 
   const handleLocation = async (event: any) => {
-    console.log(event);
     await geocodeByPlaceId(event.value.place_id)
       .then((results) => getLatLng(results[0]))
       .then(({ lat, lng }) => setLocation({ lat, lng }));

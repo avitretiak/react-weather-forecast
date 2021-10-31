@@ -18,6 +18,8 @@ const RightPane = ({ dailyWeather }: any) => {
           (forecast: any, i: number) => (
             <WeatherCardSmall
               forecast={forecast}
+              // eslint-disable-next-line react/no-array-index-key
+              key={`daySelector${i}`}
               dayOffset={i}
               selectedDay={selectedDay}
               handleClick={handleCardClick}

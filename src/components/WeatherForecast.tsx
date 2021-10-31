@@ -9,16 +9,8 @@ const WeatherForecast = () => {
   const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat.toPrecision(4)}&lon=${location.lng.toPrecision(4)}&exclude=minutely,hourly,alerts&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
   const loadWeather = async () => {
     if (location.lat || location.lng) {
-      await fetch(apiUrl).then((response) => {
-        if (!response.ok) {
-          console.log(`Did not get an ok. got: ${response.statusText}`);
-        }
-        return response.json();
-      })
-        .then((json) => setApiData(json))
-        .catch((error) => {
-          console.log(`Error getting weather data: ${error.message}`);
-        });
+      await fetch(apiUrl).then((response) => response.json())
+        .then((json) => setApiData(json));
     }
   };
   useEffect(() => {

@@ -1,11 +1,11 @@
 import React from 'react';
-import './styles/App.scss';
+import './styles/AppContainer.scss';
 import WeatherForecast from './WeatherForecast';
 
-const WeatherApp = () => (
+const AppContainer = () => (
   <div className="app-container">
     <WeatherForecast />
   </div>
 );
 
-export default WeatherApp;
+export default AppContainer;

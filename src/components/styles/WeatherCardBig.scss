@@ -1,6 +1,5 @@
-@import "./_icons";
-@import "./_constants.module";
-
+@import './_icons';
+@import './_constants.module';
 
 .wi-main {
   font-size: 90px;
@@ -10,9 +9,9 @@
   font-weight: bolder;
   font-family: 'Open Sans', sans-serif;
 }
-
-.wi-main, .temp-display {
-    text-align: center;
+.wi-main,
+.temp-display {
+  text-align: center;
 }
 .weather-card-big-current-text {
   font-weight: bold;
@@ -20,12 +19,12 @@
   line-height: 0px;
 }
 .weather-card-big {
-    .date-time-text,
-    .humidity-text,
-    .windspeed-text {
-      color: $textGrey;
-      font-size: 1em;
-    }
+  .date-time-text,
+  .humidity-text,
+  .windspeed-text {
+    color: $textGrey;
+    font-size: 1em;
+  }
 }
 .windspeed-value,
 .humidity-percentage {

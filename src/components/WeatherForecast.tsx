@@ -4,12 +4,17 @@ import RightPane from './RightPane';
 import './styles/WeatherForecast.scss';
 
 const WeatherForecast = () => {
-  const [location, setLocation] = useState({ lat: 0.00, lng: 0.00 });
+  const [location, setLocation] = useState({ lat: 0.0, lng: 0.0 });
   const [apiData, setApiData] = useState<any>();
-  const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat.toPrecision(4)}&lon=${location.lng.toPrecision(4)}&exclude=minutely,hourly,alerts&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat.toPrecision(
+    4,
+  )}&lon=${location.lng.toPrecision(4)}&exclude=minutely,hourly,alerts&appid=${
+    process.env.REACT_APP_WEATHER_API_KEY
+  }`;
   const loadWeather = async () => {
     if (location.lat || location.lng) {
-      await fetch(apiUrl).then((response) => response.json())
+      await fetch(apiUrl)
+        .then((response) => response.json())
         .then((json) => setApiData(json));
     }
   };
@@ -25,9 +30,7 @@ const WeatherForecast = () => {
         location={location}
         setLocation={setLocation}
       />
-      <RightPane
-        dailyWeather={apiData?.daily}
-      />
+      <RightPane dailyWeather={apiData?.daily} />
     </div>
   );
 };

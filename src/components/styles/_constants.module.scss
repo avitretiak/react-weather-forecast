@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400;600");
-@import "_colors.module.scss";
-@import "~antd/dist/antd.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400;600');
+@import '_colors.module.scss';
+@import '~antd/dist/antd.css';
 
 $borderRadius: 10px;
 $hoverTransition: all 0.2s ease;
-
 
 .block {
   display: block;
@@ -12,4 +11,3 @@ $hoverTransition: all 0.2s ease;
 .inline-block {
   display: inline-block;
 }
-

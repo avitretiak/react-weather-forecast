@@ -1,19 +1,19 @@
-@import "./_constants.module";
+@import './_constants.module';
 
 .temperature-chart-title {
-    text-align: center;
-    font-size: 1.2em;
-    color: $textGrey;
-    font-weight: bold;
+  text-align: center;
+  font-size: 1.2em;
+  color: $textGrey;
+  font-weight: bold;
 }
 
 .weather-chart-container {
-    overflow: hidden;
-    margin: 0px 0px;
-    border-radius: 0% 0% 3.33% 3.33%;
+  overflow: hidden;
+  margin: 0px 0px;
+  border-radius: 0% 0% 3.33% 3.33%;
 }
 
-.weather-chart {    
-    overflow:hidden;
-    border-radius: 0% 0% 10% 10%;
+.weather-chart {
+  overflow: hidden;
+  border-radius: 0% 0% 10% 10%;
 }

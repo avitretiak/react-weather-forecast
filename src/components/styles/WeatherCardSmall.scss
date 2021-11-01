@@ -1,53 +1,53 @@
 @import './_constants.module';
 
 .weather-card-small {
-    height: 100%;
-    background-color: transparent;
-    border: 0;
-    border-radius: $borderRadius;
-    transition: background-color 0.25s ease !important;
-    cursor: pointer;
+  height: 100%;
+  background-color: transparent;
+  border: 0;
+  border-radius: $borderRadius;
+  transition: background-color 0.25s ease !important;
+  cursor: pointer;
 }
 
 .weather-card-small:hover {
-    transition: all 0.2s ease !important;
-    height: 100%;
-    background-color: transparent;
-    box-shadow: 0 0 2px 2px $areaBlue;
+  transition: all 0.2s ease !important;
+  height: 100%;
+  background-color: transparent;
+  box-shadow: 0 0 2px 2px $areaBlue;
 }
 
-.weather-card-small > *{
-    font-size: 0.95em;
-    line-height: 30px;
-    color: $textGrey;
-    font-weight: normal;
+.weather-card-small > * {
+  font-size: 0.95em;
+  line-height: 30px;
+  color: $textGrey;
+  font-weight: normal;
 }
 
 .weather-card-small {
-    .humidity-container {
-        .humidity-text {
-            font-weight: normal;
-        }
-        letter-spacing: 0.60px;
-        font-weight: bold;
-        line-height: 25px;
-        padding: 5px 0px;
+  .humidity-container {
+    .humidity-text {
+      font-weight: normal;
     }
+    letter-spacing: 0.6px;
+    font-weight: bold;
+    line-height: 25px;
+    padding: 5px 0px;
+  }
 }
 .weather-card-small-day {
-    font-weight: bold;
-    font-size: small;
-} 
+  font-weight: bold;
+  font-size: small;
+}
 
-.weather-card-small > i { 
-    font-size: 30px;
-    line-height: 35px;
+.weather-card-small > i {
+  font-size: 30px;
+  line-height: 35px;
 }
 
 .weather-card-small.selected > * {
-    color: white !important;
+  color: white !important;
 }
 
-.weather-card-small.selected{
-    background-color: $fillBlue;
+.weather-card-small.selected {
+  background-color: $fillBlue;
 }

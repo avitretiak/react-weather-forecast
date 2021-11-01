@@ -32,24 +32,41 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
 
     return {
       x: pos.x < 25 ? pos.x + 10 : pos.x,
-      y: currentItemValue > 0
-        ? pos.y - (4 * (Math.max(...temperatures)))
-        : pos.y + 20 - (3 * (Math.min(...temperatures))),
+      y:
+        currentItemValue > 0
+          ? pos.y - 4 * Math.max(...temperatures)
+          : pos.y + 20 - 3 * Math.min(...temperatures),
     };
   };
   const data = {
-    labels: ['day1Morn', 'day1Day', 'day1Eve', 'day1Night',
-      'day2Morn', 'day2Day', 'day2Eve', 'day2Night',
-      'day3Morn', 'day3Day', 'day3Eve', 'day3Night',
-      'day4Morn', 'day4Day', 'day4Eve', 'day4Night'],
-    datasets: [{
-      data: temperatures,
-      fill: {
-        target: 'origin',
-        above: colors.areaBlue,
-        below: colors.areaBlue,
+    labels: [
+      'day1Morn',
+      'day1Day',
+      'day1Eve',
+      'day1Night',
+      'day2Morn',
+      'day2Day',
+      'day2Eve',
+      'day2Night',
+      'day3Morn',
+      'day3Day',
+      'day3Eve',
+      'day3Night',
+      'day4Morn',
+      'day4Day',
+      'day4Eve',
+      'day4Night',
+    ],
+    datasets: [
+      {
+        data: temperatures,
+        fill: {
+          target: 'origin',
+          above: colors.areaBlue,
+          below: colors.areaBlue,
+        },
       },
-    }],
+    ],
   };
 
   const options = {
@@ -97,12 +114,14 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
   };
 
   const highlightElement = (elementNumber: number) => {
-    const getSelectionOffset = (dayOffset: number) => (1 + (4 * dayOffset));
+    const getSelectionOffset = (dayOffset: number) => 1 + 4 * dayOffset;
     if (chartRef && chartRef.current && temperatures) {
       chartRef.current.setActiveElements([
-        { datasetIndex: 0, index: getSelectionOffset(elementNumber) }]);
+        { datasetIndex: 0, index: getSelectionOffset(elementNumber) },
+      ]);
       chartRef.current.tooltip.setActiveElements([
-        { datasetIndex: 0, index: getSelectionOffset(elementNumber) }]);
+        { datasetIndex: 0, index: getSelectionOffset(elementNumber) },
+      ]);
       chartRef.current.tooltip.update();
     }
   };
@@ -112,15 +131,18 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
 
   return (
     <div className="weather-chart-container">
-      {temperatures
-        ? (
-          <div className="weather-chart-container">
-            <p className="temperature-chart-title">Daily Average</p>
-            <Line data={data} ref={chartRef} options={options} height={`${chartHeight}px`} className="weather-chart" />
-          </div>
-        )
-        : null}
-
+      {temperatures ? (
+        <div className="weather-chart-container">
+          <p className="temperature-chart-title">Daily Average</p>
+          <Line
+            data={data}
+            ref={chartRef}
+            options={options}
+            height={`${chartHeight}px`}
+            className="weather-chart"
+          />
+        </div>
+      ) : null}
     </div>
   );
 };

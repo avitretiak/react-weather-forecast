@@ -7,7 +7,9 @@ import './styles/WeatherCardSmall.scss';
 const WeatherCardSmall = ({
   forecast, dayOffset, handleClick, selectedDay,
 }: any) => {
-  const className = `weather-card-small inline-block ${dayOffset === selectedDay ? 'selected' : ''}`;
+  const className = `weather-card-small inline-block ${
+    dayOffset === selectedDay ? 'selected' : ''
+  }`;
   return (
     <button type="button" className={className} onClick={() => handleClick(dayOffset)}>
       <span className="block weather-card-small-day">

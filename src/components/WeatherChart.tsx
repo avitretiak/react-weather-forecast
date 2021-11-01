@@ -34,7 +34,10 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
     };
   };
   const data = {
-    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4'],
+    labels: ['day1Morn', 'day1Day', 'day1Eve', 'day1Night',
+      'day2Morn', 'day2Day', 'day2Eve', 'day2Night',
+      'day3Morn', 'day3Day', 'day3Eve', 'day3Night',
+      'day4Morn', 'day4Day', 'day4Eve', 'day4Night'],
     datasets: [{
       data: temperatures,
       fill: {
@@ -54,8 +57,8 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
         ticks: {
           display: false,
         },
-        min: temperatures ? Math.min(...temperatures) - 10 : 0,
-        max: temperatures ? Math.max(...temperatures) + 10 : 50,
+        min: temperatures ? Math.min(...temperatures) - 3.33 : 0,
+        max: temperatures ? Math.max(...temperatures) + 3.33 : 50,
       },
       x: {
         ticks: {
@@ -90,9 +93,12 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
   };
 
   const highlightElement = (elementNumber: number) => {
+    const getSelectionOffset = (dayOffset: number) => (1 + (4 * dayOffset));
     if (chartRef && chartRef.current && temperatures) {
-      chartRef.current.setActiveElements([{ datasetIndex: 0, index: elementNumber }]);
-      chartRef.current.tooltip.setActiveElements([{ datasetIndex: 0, index: elementNumber }]);
+      chartRef.current.setActiveElements([
+        { datasetIndex: 0, index: getSelectionOffset(elementNumber) }]);
+      chartRef.current.tooltip.setActiveElements([
+        { datasetIndex: 0, index: getSelectionOffset(elementNumber) }]);
       chartRef.current.tooltip.update();
     }
   };

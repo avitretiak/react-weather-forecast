@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-weather-forecast/static/css/main.db728eaf.chunk.css",
-    "main.js": "/react-weather-forecast/static/js/main.5653d131.chunk.js",
-    "main.js.map": "/react-weather-forecast/static/js/main.5653d131.chunk.js.map",
+    "main.js": "/react-weather-forecast/static/js/main.5f6d3816.chunk.js",
+    "main.js.map": "/react-weather-forecast/static/js/main.5f6d3816.chunk.js.map",
     "runtime-main.js": "/react-weather-forecast/static/js/runtime-main.cbd74cab.js",
     "runtime-main.js.map": "/react-weather-forecast/static/js/runtime-main.cbd74cab.js.map",
     "static/css/2.a72f6afe.chunk.css": "/react-weather-forecast/static/css/2.a72f6afe.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.a72f6afe.chunk.css",
     "static/js/2.9be5b9b7.chunk.js",
     "static/css/main.db728eaf.chunk.css",
-    "static/js/main.5653d131.chunk.js"
+    "static/js/main.5f6d3816.chunk.js"
   ]
 }

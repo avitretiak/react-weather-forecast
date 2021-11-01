@@ -1,28 +1,21 @@
-@import './constants';
-
-.location-select-input__option--is-selected {
-  background-color: rgba(24, 143, 255, 0.25) !important;
-  color: rgba(0, 0, 0, 0.7) !important;
-}
+@import './constants.module';
 
 .location-select-input__control {
-  border: 0 !important;
-  border-color: #40a9ff;
+  border-color: $areaBlue;
   border-radius: $borderRadius;
-  box-shadow: 0 0 4px 1px $borderGrey;
-  font-size: 14px;
-  padding: 3px 11px;
+  font-size: 1em;
+  padding: 3px 5px;
   touch-action: manipulation;
-  transition: all 0.2s ease !important;
+  transition: $hoverTransition !important;
   width: 100%;
 }
 
 .location-select-input__control:focus-within {
-  box-shadow: 0 0 2px 2px rgba(24, 143, 255, 0.514);
+  box-shadow: 0 0 4px 1px $areaBlue;
 }
 
 .location-select-input__control:hover {
-  box-shadow: 0 0 2px 2px rgba(24, 143, 255, 0.404);
+  box-shadow: 0 0 4px 1px $areaBlue;
   width: 100%;
 }
 
@@ -30,24 +23,24 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  font-size: 14px;
-  margin: 0;
-  padding: 5px 12px;
+  font-size: 1em;
+  margin-top: -5px !important;
   padding: 0;
   position: relative;
 }
 
 .location-select-input__option {
-  color: rgba(0, 0, 0, 0.7);
-  cursor: pointer;
+  color: black;
+  background-color: $areaBlue;
   display: flex;
   line-height: 22px;
   min-height: 32px;
-  transition: background 0.3s ease;
+  transition: $hoverTransition !important;
 }
 
 .location-select-input__option--is-focused {
-  background-color: rgba(24, 143, 255, 0.1) !important;
+  box-shadow: 0 0 4px 1px $areaBlue;
+  cursor: pointer;
 }
 
 .location-select-input__placeholder {
@@ -56,6 +49,7 @@
   font-weight: 400;
   white-space: nowrap;
   width: 75%;
+  cursor: text;
 }
 
 .location-btn,
@@ -76,6 +70,6 @@
   width: 5% !important;
 
   svg {
-    color: $strongBlue !important;
+    color: $fillBlue !important;
   }
 }

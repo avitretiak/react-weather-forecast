@@ -1,11 +1,8 @@
-@import './constants';
+@import './constants.module';
 @import './layout';
 
 .container {
   background: white;
-  border-radius: 6px;
-  box-shadow: 20px 20px 20px 0 $blueShadow;
-  overflow: hidden;
-  padding: 3vh 2vw;
-  position: relative;
+  border-radius: $borderRadius;
+  box-shadow: 5px 5px 2px 2px $areaBlue;
 }

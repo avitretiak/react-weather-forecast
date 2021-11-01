@@ -1,5 +1,27 @@
-@import './_colors.module.scss';
+@import './_colors.module';
+@import './_constants.module';
 
 .app-container {
   background-color: $backgroundGrey;
+}
+
+:root {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+* {
+  font-family: "Open Sans", sans-serif;
+  ::-webkit-scrollbar-track {
+    background-color: $backgroundGrey;
+    border-radius: $borderRadius;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    background-color: $backgroundGrey;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: $borderRadius;
+    background-color: $fillBlue;
+  }
 }

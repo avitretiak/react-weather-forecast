@@ -27,6 +27,7 @@ const LocationInput = ({ setLocation }: any) => {
     }),
   };
   const selectProps = {
+    openMenuOnClick: false,
     placeholder: value,
     noOptionsMessage: () => 'No Results Found',
     components: {

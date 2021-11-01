@@ -5,7 +5,7 @@ import './styles/WeatherChart.scss';
 
 const chartStyle = {
   borderCapStyle: 'round',
-  borderColor: colors.strongBlue,
+  borderColor: colors.fillBlue,
   borderWidth: 2,
   tension: 0.4,
   hoverBorderWidth: 3,
@@ -13,7 +13,7 @@ const chartStyle = {
   hoverBorderColor: colors.white,
   pointBorderWidth: 0,
   pointBackgroundColor: 'rgba(0, 0, 0, 0)',
-  hoverBackgroundColor: colors.strongBlue,
+  hoverBackgroundColor: colors.fillBlue,
 };
 
 const WeatherChart = ({ temperatures, selectedDay }: any) => {
@@ -42,8 +42,8 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
       data: temperatures,
       fill: {
         target: 'origin',
-        above: colors.blue,
-        below: colors.blue,
+        above: colors.areaBlue,
+        below: colors.areaBlue,
       },
     }],
   };
@@ -76,7 +76,7 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
         backgroundColor: 'transparent',
         displayColors: false,
         bodyFontSize: 32,
-        bodyColor: colors.strongBlue,
+        bodyColor: colors.fillBlue,
         bodyFont: {
           weight: 'bold',
           size: 22,

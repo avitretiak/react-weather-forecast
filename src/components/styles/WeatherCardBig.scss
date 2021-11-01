@@ -1,5 +1,5 @@
-@import "./_icons.scss";
-@import "./_constants.scss";
+@import "./_icons";
+@import "./_constants.module";
 
 
 .wi-main {
@@ -18,7 +18,6 @@
   font-weight: bold;
   font-size: x-large;
   line-height: 0px;
-  margin-top: -20px;
 }
 .weather-card-big {
     .date-time-text,

@@ -1,4 +1,4 @@
-@import "./_constants.scss";
+@import "./_constants.module";
 
 .temperature-chart-title {
     text-align: center;
@@ -10,9 +10,10 @@
 .weather-chart-container {
     overflow: hidden;
     margin: 0px 0px;
+    border-radius: 0% 0% 3.33% 3.33%;
 }
 
-.weather-chart {
+.weather-chart {    
     overflow:hidden;
     border-radius: 0% 0% 10% 10%;
 }

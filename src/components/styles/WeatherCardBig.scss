@@ -4,20 +4,24 @@
 .wi-main {
   font-size: 90px;
 }
+
 .temp-display {
   font-size: 50px;
   font-weight: bolder;
   font-family: 'Open Sans', sans-serif;
 }
+
 .wi-main,
 .temp-display {
   text-align: center;
 }
+
 .weather-card-big-current-text {
   font-weight: bold;
   font-size: x-large;
   line-height: 0px;
 }
+
 .weather-card-big {
   .date-time-text,
   .humidity-text,
@@ -26,6 +30,7 @@
     font-size: 1em;
   }
 }
+
 .windspeed-value,
 .humidity-percentage {
   font-weight: bold;

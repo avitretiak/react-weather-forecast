@@ -31,10 +31,10 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
     }
 
     return {
-      x: pos.x < 25 ? pos.x + 10 : pos.x,
+      x: pos.x < 50 ? pos.x + 10 : pos.x,
       y:
         currentItemValue > 0
-          ? pos.y - 4 * Math.max(...temperatures)
+          ? pos.y - 2 * Math.max(...temperatures)
           : pos.y + 20 - 3 * Math.min(...temperatures),
     };
   };

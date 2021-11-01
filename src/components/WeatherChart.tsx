@@ -16,6 +16,8 @@ const chartStyle = {
   hoverBackgroundColor: colors.fillBlue,
 };
 
+const chartHeight = 120;
+
 const WeatherChart = ({ temperatures, selectedDay }: any) => {
   const chartRef = useRef<any>(null);
 
@@ -29,8 +31,10 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
     }
 
     return {
-      x: pos.x,
-      y: currentItemValue > 0 ? pos.y - 30 : pos.y + 30,
+      x: pos.x < 25 ? pos.x + 10 : pos.x,
+      y: currentItemValue > 0
+        ? pos.y - (4 * (Math.max(...temperatures)))
+        : pos.y + 20 - (3 * (Math.min(...temperatures))),
     };
   };
   const data = {
@@ -57,8 +61,8 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
         ticks: {
           display: false,
         },
-        min: temperatures ? Math.min(...temperatures) - 3.33 : 0,
-        max: temperatures ? Math.max(...temperatures) + 3.33 : 50,
+        min: temperatures ? Math.min(...temperatures) - 7.5 : 0,
+        max: temperatures ? Math.max(...temperatures) + 7.5 : 50,
       },
       x: {
         ticks: {
@@ -112,7 +116,7 @@ const WeatherChart = ({ temperatures, selectedDay }: any) => {
         ? (
           <div className="weather-chart-container">
             <p className="temperature-chart-title">Daily Average</p>
-            <Line data={data} ref={chartRef} options={options} height="150px" className="weather-chart" />
+            <Line data={data} ref={chartRef} options={options} height={`${chartHeight}px`} className="weather-chart" />
           </div>
         )
         : null}
